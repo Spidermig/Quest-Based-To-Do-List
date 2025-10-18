@@ -80,7 +80,8 @@ label daily_quest_kael:
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
 
-    call screen quest_list(quests, completed, "Kael")
+   call screen quest_list(quests, completed, "Kael")
+   
 
 # -----------------------------
 # Mentor 3: Mira – Mindfulness & Rest
@@ -105,7 +106,7 @@ label daily_quest_mira:
 # -----------------------------
 screen quest_list(quests, completed, mentor_name):
 
-    tag menu
+    menu
     vbox:
         spacing 15
         text "[mentor_name]'s Daily Quests" size 35 xalign 0.5
@@ -116,6 +117,7 @@ screen quest_list(quests, completed, mentor_name):
                 textbutton "[q]" action [SetVariable("completed", completed + [q]), Return()] 
         if len(completed) == len(quests):
             textbutton "Finish Day" action Jump("day_complete")
+
 
 # -----------------------------
 # Day Complete Screen
