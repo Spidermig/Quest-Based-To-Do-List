@@ -63,6 +63,7 @@ label daily_quest_astra:
     $ completed = []
 
     call screen quest_list(quests, completed, "Astra")
+    jump day_complete
 
 # -----------------------------
 # Mentor 2: Kael – Fitness & Action
@@ -79,8 +80,8 @@ label daily_quest_kael:
     sys "Today’s Quests:"
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
-
-   call screen quest_list(quests, completed, "Kael")
+    call screen quest_list(quests, completed, "Kael")
+    jump day_complete
    
 
 # -----------------------------
@@ -100,7 +101,7 @@ label daily_quest_mira:
     $ completed = []
 
     call screen quest_list(quests, completed, "Mira")
-
+    jump day_complete
 # -----------------------------
 # Quest Screen (Reusable)
 # -----------------------------
