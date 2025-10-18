@@ -44,7 +44,7 @@ label start:
 # -----------------------------
 label mentor_astra:
     scene cottage bedroom
-    show sorcerer normal at Position(yalign=1)
+    show sorcerer talking at Position(yalign=1)
     $ selectedQuest = 0
     mentor1 "Greetings, [player_name]. I am Maya, your Planner of Light."
     mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
@@ -52,7 +52,7 @@ label mentor_astra:
     jump daily_quest_astra
 
 label daily_quest_astra:
-    show sorcerer talking at Position(yalign=1)
+    show sorcerer normal at Position(yalign=1)
     scene cottage bedroom
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
@@ -66,7 +66,7 @@ label daily_quest_astra:
 # -----------------------------
 label mentor_kael:
     show clearing 1
-    show sorcerer normal at Position(yalign=1)
+    show sorcerer talking at Position(yalign=1)
     $ selectedQuest = 1
     mentor1 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
     mentor1 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
@@ -87,7 +87,7 @@ label daily_quest_kael:
 label mentor_mira:
 
     scene castle 4
-    show sorcerer happy at Position(yalign=1)
+    show sorcerer talking at Position(yalign=1)
     $ selectedQuest = 2
     mentor1 "Welcome, [player_name]. I am Maya, your Sage of Balance."
     mentor1 "We’ll train your mind to rest as hard as it works. Press enter to begin."
@@ -100,6 +100,7 @@ label daily_quest_mira:
     $ completed = []
 
     call screen quest_list
+
     jump day_complete
 # -----------------------------
 # Quest Screen (Reusable)
@@ -108,7 +109,8 @@ screen quest_list():
     vbox:
         align (0.5, 0.5)
         for quest in quests:
-            textbutton "[quest]" action Return(quest)
+            textbutton "[quest]" action Return(quest) style "quick_menu"
+
 # -----------------------------
 # Day Complete Screen
 # -----------------------------
