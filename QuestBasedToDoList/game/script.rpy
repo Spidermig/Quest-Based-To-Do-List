@@ -54,7 +54,7 @@ label mentor_astra:
     jump daily_quest_astra
 
 label daily_quest_astra:
-    show sorcerer talking at Position(ypos=500)
+    show sorcerer talking at Position(yalign=1)
     scene cottage bedroom
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
