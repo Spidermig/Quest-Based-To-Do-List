@@ -110,8 +110,7 @@ screen quest_list():
     vbox:
         align (0.5, 0.5)
         for quest in quests:
-            textbutton "[quest]" action Return(quest) style "quick_menu"
-
+            textbutton "[quest]" action Return(quest)
 # -----------------------------
 # Day Complete Screen
 # -----------------------------
