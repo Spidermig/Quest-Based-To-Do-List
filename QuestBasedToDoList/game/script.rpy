@@ -57,8 +57,16 @@ label daily_quest_astra:
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
-   # while len(completed)<len(quests):
-        #call screen quest_list
+    $ numOfQuests = len(quests)
+    $ continueTasks = len(completed)<numOfQuests
+   
+    while continueTasks == True:
+        call screen quest_list
+        $ result = _return
+        $ completed.append(result)
+        $ quests.remove(result)
+        $ continueTasks = len(completed)<numOfQuests
+        mentor1 "You are on your journey to being the master of any challenge by completing the task: [_return]"
     jump day_complete
 
 # -----------------------------
@@ -70,6 +78,7 @@ label mentor_kael:
     $ selectedQuest = 1
     mentor1 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
     mentor1 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
+
     jump daily_quest_kael
 
 label daily_quest_kael:
@@ -77,8 +86,16 @@ label daily_quest_kael:
     sys "Today’s Quests:"
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
-    call screen quest_list
-    $ completed.append(_return)
+    $ numOfQuests = len(quests)
+    $ continueTasks = len(completed)<numOfQuests
+   
+    while continueTasks == True:
+        call screen quest_list
+        $ result = _return
+        $ completed.append(result)
+        $ quests.remove(result)
+        $ continueTasks = len(completed)<numOfQuests
+        mentor1 "You are on your journey to muscles and peak VO2 Max by completing the task: [_return]"
     jump day_complete
    
 
@@ -99,9 +116,16 @@ label daily_quest_mira:
     sys "Today’s Quests:"
     $ quests = ["Meditate for 5 minutes", "Take a short walk outside", "Reflect on one thing you're grateful for"]
     $ completed = []
-
-    call screen quest_list
-
+    $ numOfQuests = len(quests)
+    $ continueTasks = len(completed)<numOfQuests
+   
+    while continueTasks == True:
+        call screen quest_list
+        $ result = _return
+        $ completed.append(result)
+        $ quests.remove(result)
+        $ continueTasks = len(completed)<numOfQuests
+        mentor1 "You are on your journey to full mindfulness and relaxation by completing the task: [_return]"
     jump day_complete
 # -----------------------------
 # Quest Screen (Reusable)
