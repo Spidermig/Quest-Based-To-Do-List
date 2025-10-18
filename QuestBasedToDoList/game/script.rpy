@@ -57,15 +57,15 @@ label daily_quest_astra:
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
-    
-    call screen quest_list
+   # while len(completed)<len(quests):
+        #call screen quest_list
     jump day_complete
 
 # -----------------------------
 # Mentor 2: Kael – Fitness & Action
 # -----------------------------
 label mentor_kael:
-    show clearing 1
+    scene clearing 1
     show sorcerer talking at Position(yalign=1)
     $ selectedQuest = 1
     mentor1 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
@@ -78,6 +78,7 @@ label daily_quest_kael:
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
     call screen quest_list
+    $ completed.append(_return)
     jump day_complete
    
 
