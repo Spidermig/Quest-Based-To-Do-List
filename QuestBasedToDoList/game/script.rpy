@@ -51,6 +51,7 @@ label start:
 label mentor_astra:
     scene bg room
     show mentor1 normal
+    $ selectedQuest = 0
     mentor1 "Greetings, [player_name]. I am Astra, the Planner of Light."
     mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
     mentor1 "Let’s begin your first Daily Quest! Press enter to begin."
@@ -62,7 +63,7 @@ label daily_quest_astra:
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
 
-    call screen quest_list(quests, completed, "Astra")
+    call screen quest_list
     jump day_complete
 
 # -----------------------------
@@ -71,6 +72,7 @@ label daily_quest_astra:
 label mentor_kael:
     scene bg gym
     show mentor2 normal
+    $ selectedQuest = 1
     mentor2 "Ah, [player_name]! I’m Kael, your mentor in strength and discipline."
     mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
     jump daily_quest_kael
@@ -80,7 +82,7 @@ label daily_quest_kael:
     sys "Today’s Quests:"
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
-    call screen quest_list(quests, completed, "Kael")
+    call screen quest_list
     jump day_complete
    
 
@@ -90,6 +92,7 @@ label daily_quest_kael:
 label mentor_mira:
     scene bg garden
     show mentor3 normal
+    $ selectedQuest = 2
     mentor3 "Welcome, [player_name]. I am Mira, the Sage of Balance."
     mentor3 "We’ll train your mind to rest as hard as it works. Press enter to begin."
     jump daily_quest_mira
@@ -100,33 +103,16 @@ label daily_quest_mira:
     $ quests = ["Meditate for 5 minutes", "Take a short walk outside", "Reflect on one thing you're grateful for"]
     $ completed = []
 
-    call screen quest_list(quests, completed, "Mira")
+    call screen quest_list
     jump day_complete
 # -----------------------------
 # Quest Screen (Reusable)
 # -----------------------------
-screen quest_list(quests, completed, mentor_name):
-
-    menu
-    #vbox:
-    #    spacing 15
-    #    text "[mentor_name]'s Daily Quests" size 35 xalign 0.5
-#     for q in quests:
-    #        if q in completed:
-#             text "✓ [q]" color "#77dd77"
-#         else:
-    #            textbutton "[q]" action [SetVariable("completed", completed + [q]), Return()] 
-    #    if len(completed) == len(quests):
-    #        textbutton "Finish Day" action Jump("day_complete")
-    menu:
-        "[mentor_name]'s Daily Quests"
-        "[q[0]]":
-            jump day_complete
-        "[q[1]]":
-            jump day_complete
-        "[q[2]]":
-            jump day_complete
-        
+screen quest_list():
+    vbox:
+        align (0.5, 0.5)
+        for quest in quests:
+            textbutton "[quest]" action Return(quest)
 # -----------------------------
 # Day Complete Screen
 # -----------------------------
