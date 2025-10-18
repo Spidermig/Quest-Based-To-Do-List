@@ -12,28 +12,26 @@
 
 # Declare characters
 define p = Character("[player_name]", color="#a8e6cf")
-define mentor1 = Character("Astra", color="#ffd3b6")
-define mentor2 = Character("Kael", color="#ffaaa5")
-define mentor3 = Character("Mira", color="#dcedc1")
+define mentor1 = Character("Maya", color="#ffd3b6")
+#define mentor2 = Character("Kael", color="#ffaaa5")
+#define mentor3 = Character("Mira", color="#dcedc1")
 define sys = Character("System", color="#b2ebf2")
 
 # Start of the game
 label start:
-    scene road with fade Transform(zoom=1.5)
+    scene road with fade 
     # Ask player's name
     $ player_name = renpy.input("What is your name, adventurer?")
     $ player_name = player_name.strip()
     if player_name == "":
         $ player_name = "Traveler"
-
-    show text "Welcome to QuestDay — a world where your daily tasks become epic adventures!" with dissolve
-    pause 2
-    hide text
-
-    sys "Every hero needs guidance. Choose your mentor to shape your journey: press enter to choose"
     show sorcerer happy at Position(yalign=1)
+    mentor1 "Welcome to QuestDay — a world where your daily tasks become epic adventures!" 
+
+    mentor1 "Every hero needs guidance. How can I assist your journey: \nHit enter to continue"
+    
     menu:
-        "Choose your mentor:"
+        "Choose your focus:"
         "The Planner of Light (Focus: Organization & Routine)": 
             jump mentor_astra
         "The Warrior of Action (Focus: Fitness & Productivity)": 
@@ -46,9 +44,9 @@ label start:
 # -----------------------------
 label mentor_astra:
     scene cottage bedroom
-    show mentor1 normal
+    show sorcerer normal at Position(yalign=1)
     $ selectedQuest = 0
-    mentor1 "Greetings, [player_name]. I am Maya, the Planner of Light."
+    mentor1 "Greetings, [player_name]. I am Maya, your Planner of Light."
     mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
     mentor1 "Let’s begin your first Daily Quest! Press enter to begin."
     jump daily_quest_astra
@@ -68,9 +66,10 @@ label daily_quest_astra:
 # -----------------------------
 label mentor_kael:
     show clearing 1
+    show sorcerer normal at Position(yalign=1)
     $ selectedQuest = 1
-    mentor2 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
-    mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
+    mentor1 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
+    mentor1 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
     jump daily_quest_kael
 
 label daily_quest_kael:
@@ -88,10 +87,10 @@ label daily_quest_kael:
 label mentor_mira:
 
     scene castle 4
-    show mentor3 normal
+    show sorcerer happy at Position(yalign=1)
     $ selectedQuest = 2
-    mentor3 "Welcome, [player_name]. I am Maya, the Sage of Balance."
-    mentor3 "We’ll train your mind to rest as hard as it works. Press enter to begin."
+    mentor1 "Welcome, [player_name]. I am Maya, your Sage of Balance."
+    mentor1 "We’ll train your mind to rest as hard as it works. Press enter to begin."
     jump daily_quest_mira
 
 label daily_quest_mira:
