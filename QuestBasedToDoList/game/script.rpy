@@ -3,9 +3,6 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
-
 # The game starts here.
 
 # game/script.rpy
@@ -38,11 +35,11 @@ label start:
 
     menu:
         "Choose your mentor:"
-        "Astra – The Planner of Light (Focus: Organization & Routine)": 
+        "The Planner of Light (Focus: Organization & Routine)": 
             jump mentor_astra
-        "Kael – The Warrior of Action (Focus: Fitness & Productivity)": 
+        "The Warrior of Action (Focus: Fitness & Productivity)": 
             jump mentor_kael
-        "Mira – The Sage of Balance (Focus: Mindfulness & Rest)": 
+        "The Sage of Balance (Focus: Mindfulness & Rest)": 
             jump mentor_mira
 
 # -----------------------------
@@ -52,7 +49,7 @@ label mentor_astra:
     scene bg room
     show mentor1 normal
     $ selectedQuest = 0
-    mentor1 "Greetings, [player_name]. I am Astra, the Planner of Light."
+    mentor1 "Greetings, [player_name]. I am Maya, the Planner of Light."
     mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
     mentor1 "Let’s begin your first Daily Quest! Press enter to begin."
     jump daily_quest_astra
@@ -73,7 +70,7 @@ label mentor_kael:
     scene bg gym
     show mentor2 normal
     $ selectedQuest = 1
-    mentor2 "Ah, [player_name]! I’m Kael, your mentor in strength and discipline."
+    mentor2 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
     mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
     jump daily_quest_kael
 
@@ -93,7 +90,7 @@ label mentor_mira:
     scene bg garden
     show mentor3 normal
     $ selectedQuest = 2
-    mentor3 "Welcome, [player_name]. I am Mira, the Sage of Balance."
+    mentor3 "Welcome, [player_name]. I am Maya, the Sage of Balance."
     mentor3 "We’ll train your mind to rest as hard as it works. Press enter to begin."
     jump daily_quest_mira
 
