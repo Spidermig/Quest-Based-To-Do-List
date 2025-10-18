@@ -26,7 +26,7 @@ label start:
     if player_name == "":
         $ player_name = "Traveler"
 
-    scene black with fade
+    scene road with fade
     show text "Welcome to QuestDay — a world where your daily tasks become epic adventures!" with dissolve
     pause 2
     hide text
@@ -46,7 +46,7 @@ label start:
 # Mentor 1: Astra – Organization
 # -----------------------------
 label mentor_astra:
-    scene bg room
+    scene cottage bedroom
     show mentor1 normal
     $ selectedQuest = 0
     mentor1 "Greetings, [player_name]. I am Maya, the Planner of Light."
@@ -55,7 +55,7 @@ label mentor_astra:
     jump daily_quest_astra
 
 label daily_quest_astra:
-    scene bg desk
+    scene cottage bedroom
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
@@ -68,14 +68,14 @@ label daily_quest_astra:
 # -----------------------------
 label mentor_kael:
     scene bg gym
-    show mentor2 normal
+    show clearing 1
     $ selectedQuest = 1
     mentor2 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
     mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
     jump daily_quest_kael
 
 label daily_quest_kael:
-    scene bg gym
+    scene clearing 1
     sys "Today’s Quests:"
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
@@ -87,7 +87,7 @@ label daily_quest_kael:
 # Mentor 3: Mira – Mindfulness & Rest
 # -----------------------------
 label mentor_mira:
-    scene bg garden
+    scene castle 4
     show mentor3 normal
     $ selectedQuest = 2
     mentor3 "Welcome, [player_name]. I am Maya, the Sage of Balance."
@@ -95,7 +95,7 @@ label mentor_mira:
     jump daily_quest_mira
 
 label daily_quest_mira:
-    scene bg garden
+    scene castle 4
     sys "Today’s Quests:"
     $ quests = ["Meditate for 5 minutes", "Take a short walk outside", "Reflect on one thing you're grateful for"]
     $ completed = []
