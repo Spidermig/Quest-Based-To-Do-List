@@ -54,7 +54,7 @@ label mentor_astra:
 label daily_quest_astra:
     show sorcerer normal at Position(yalign=1)
     scene cottage bedroom
-    sys "Today’s Quests:"
+    #sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
     $ numOfQuests = len(quests)
@@ -83,7 +83,7 @@ label mentor_kael:
 
 label daily_quest_kael:
     scene clearing 1
-    sys "Today’s Quests:"
+    #sys "Today’s Quests:"
     $ quests = ["Stretch for 10 minutes", "Complete your main workout", "Drink 2L of water"]
     $ completed = []
     $ numOfQuests = len(quests)
@@ -113,7 +113,7 @@ label mentor_mira:
 
 label daily_quest_mira:
     scene castle 4
-    sys "Today’s Quests:"
+    #sys "Today’s Quests:"
     $ quests = ["Meditate for 5 minutes", "Take a short walk outside", "Reflect on one thing you're grateful for"]
     $ completed = []
     $ numOfQuests = len(quests)
@@ -131,6 +131,7 @@ label daily_quest_mira:
 # Quest Screen (Reusable)
 # -----------------------------
 screen quest_list():
+    text "Choose today's focus" align (0.5, 0.4)
     vbox:
         align (0.5, 0.5)
         for quest in quests:
