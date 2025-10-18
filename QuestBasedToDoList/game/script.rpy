@@ -108,18 +108,25 @@ label daily_quest_mira:
 screen quest_list(quests, completed, mentor_name):
 
     menu
-    vbox:
-        spacing 15
-        text "[mentor_name]'s Daily Quests" size 35 xalign 0.5
-        for q in quests:
-            if q in completed:
-                text "✓ [q]" color "#77dd77"
-            else:
-                textbutton "[q]" action [SetVariable("completed", completed + [q]), Return()] 
-        if len(completed) == len(quests):
-            textbutton "Finish Day" action Jump("day_complete")
-
-
+    #vbox:
+    #    spacing 15
+    #    text "[mentor_name]'s Daily Quests" size 35 xalign 0.5
+#     for q in quests:
+    #        if q in completed:
+#             text "✓ [q]" color "#77dd77"
+#         else:
+    #            textbutton "[q]" action [SetVariable("completed", completed + [q]), Return()] 
+    #    if len(completed) == len(quests):
+    #        textbutton "Finish Day" action Jump("day_complete")
+    menu:
+        "[mentor_name]'s Daily Quests"
+        "[q[0]]":
+            jump day_complete
+        "[q[1]]":
+            jump day_complete
+        "[q[2]]":
+            jump day_complete
+        
 # -----------------------------
 # Day Complete Screen
 # -----------------------------
