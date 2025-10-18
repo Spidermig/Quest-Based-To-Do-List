@@ -141,6 +141,7 @@ screen quest_list():
 # -----------------------------
 label day_complete:
     scene clearing 1
+    show sorcerer happy at Position(yalign=1)
     mentor1 "Congratulations, [player_name]! You completed all your quests for the day."
     mentor1 "Return tomorrow for new challenges!"
     return
