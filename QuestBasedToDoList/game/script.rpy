@@ -32,7 +32,7 @@ label start:
     hide text
 
     sys "Every hero needs guidance. Choose your mentor to shape your journey: press enter to choose"
-
+    show sorcerer happy at Position(ypos=500)
     menu:
         "Choose your mentor:"
         "The Planner of Light (Focus: Organization & Routine)": 
@@ -47,7 +47,6 @@ label start:
 # -----------------------------
 label mentor_astra:
     scene bg room
-    show mentor1 normal
     $ selectedQuest = 0
     mentor1 "Greetings, [player_name]. I am Maya, the Planner of Light."
     mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
@@ -56,6 +55,7 @@ label mentor_astra:
 
 label daily_quest_astra:
     scene bg desk
+    show sorcerer talking at Position(ypos=500)
     sys "Today’s Quests:"
     $ quests = ["Organize your workspace", "Write your top 3 priorities", "Clean your email inbox"]
     $ completed = []
@@ -68,7 +68,6 @@ label daily_quest_astra:
 # -----------------------------
 label mentor_kael:
     scene bg gym
-    show mentor2 normal
     $ selectedQuest = 1
     mentor2 "Ah, [player_name]! I’m Maya, your mentor in strength and discipline."
     mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
@@ -88,7 +87,7 @@ label daily_quest_kael:
 # -----------------------------
 label mentor_mira:
     scene bg garden
-    show mentor3 normal
+   
     $ selectedQuest = 2
     mentor3 "Welcome, [player_name]. I am Maya, the Sage of Balance."
     mentor3 "We’ll train your mind to rest as hard as it works. Press enter to begin."
@@ -96,6 +95,7 @@ label mentor_mira:
 
 label daily_quest_mira:
     scene bg garden
+    show sorcerer talking at Position(ypos=500)
     sys "Today’s Quests:"
     $ quests = ["Meditate for 5 minutes", "Take a short walk outside", "Reflect on one thing you're grateful for"]
     $ completed = []
@@ -114,7 +114,7 @@ screen quest_list():
 # Day Complete Screen
 # -----------------------------
 label day_complete:
-    scene bg sunset
+    scene clearing 1
     sys "Congratulations, [player_name]! You completed all your quests for the day."
     sys "Return tomorrow for new challenges!"
     return
