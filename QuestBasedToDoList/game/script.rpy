@@ -34,7 +34,7 @@ label start:
     pause 2
     hide text
 
-    sys "Every hero needs guidance. Choose your mentor to shape your journey:"
+    sys "Every hero needs guidance. Choose your mentor to shape your journey: press enter to choose"
 
     menu:
         "Choose your mentor:"
@@ -52,8 +52,8 @@ label mentor_astra:
     scene bg room
     show mentor1 normal
     mentor1 "Greetings, [player_name]. I am Astra, the Planner of Light."
-    mentor1 "Your path will be paved by structure, routine, and order."
-    mentor1 "Let’s begin your first Daily Quest!"
+    mentor1 "Your path will be paved by structure, routine, and order. Press enter to continue."
+    mentor1 "Let’s begin your first Daily Quest! Press enter to begin."
     jump daily_quest_astra
 
 label daily_quest_astra:
@@ -71,7 +71,7 @@ label mentor_kael:
     scene bg gym
     show mentor2 normal
     mentor2 "Ah, [player_name]! I’m Kael, your mentor in strength and discipline."
-    mentor2 "Every day is a battle against procrastination. Let’s conquer it together!"
+    mentor2 "Every day is a battle against procrastination. Let’s conquer it together! Press enter to begin."
     jump daily_quest_kael
 
 label daily_quest_kael:
@@ -89,7 +89,7 @@ label mentor_mira:
     scene bg garden
     show mentor3 normal
     mentor3 "Welcome, [player_name]. I am Mira, the Sage of Balance."
-    mentor3 "We’ll train your mind to rest as hard as it works."
+    mentor3 "We’ll train your mind to rest as hard as it works. Press enter to begin."
     jump daily_quest_mira
 
 label daily_quest_mira:
